@@ -11,7 +11,7 @@ class ClonesController < ApplicationController
   # GET /clones/1
   # GET /clones/1.json
   def show
-      @favorite = current_user.favorites.find_by(clone_id: @clone.id)
+      @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
 
   # GET /clones/new
@@ -75,7 +75,8 @@ class ClonesController < ApplicationController
     end
     
     def login_check
-      unless current_user.present?
+      if current_user.present?
+      else
         flash[:alert] = "ログインしてください"
         redirect_to root_path
       end
