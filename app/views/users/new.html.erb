@@ -23,6 +23,7 @@
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-
+  <%= render 'form', user: @user %>
+  <br>
   <%= f.submit "Create my account" %>
 <% end %>

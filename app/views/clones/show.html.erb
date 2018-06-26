@@ -8,6 +8,10 @@
         <strong>Content:</strong>
         <%= @clone.content %>
       </p>
+      <p>
+        <strong>Image:</strong>
+        <%= image_tag @clone.image %>
+      </p>
       <br>
       <% if logged_in? %>
       <%= link_to "Profile", user_path(current_user.id) %>

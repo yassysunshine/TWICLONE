@@ -30,7 +30,9 @@
           <% @clones.each do |clone| %>
             <tr>
               <td><%= clone.content %></td>
+              <td><%= clone.image %></td>
               <% if logged_in? %>
+              <td><%= link_to '  詳細　', clone_path(clone) %></td>
               <td><%= link_to '　編集　', edit_clone_path(clone) %></td>
               <td><%= link_to '　削除　', clone, method: :delete, data: { confirm: '削除しますか?' } %></td>
               <% else %>

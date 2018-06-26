@@ -15,6 +15,11 @@
     <%= form.label :content %>
     <%= form.text_field :content, id: :clone_content %>
   </div>
+  
+  <div class="file_field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :clone_image %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

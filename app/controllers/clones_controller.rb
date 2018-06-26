@@ -1,6 +1,6 @@
 class ClonesController < ApplicationController
   before_action :set_clone, only: [:show, :edit, :update, :destroy]
-  before_action :login_check, only: [:new, :edit, :update, :destroy]
+  before_action :login_check, only: [:new, :edit, :update, :destroy, :show]
 
   # GET /clones
   # GET /clones.json
@@ -11,7 +11,7 @@ class ClonesController < ApplicationController
   # GET /clones/1
   # GET /clones/1.json
   def show
-      @favorite = current_user.favorites.find_by(clone_id: @clone.id)
+    @favorite = current_user.favorites.find_by(clone_id: @clone.id)
   end
 
   # GET /clones/new
@@ -71,7 +71,7 @@ class ClonesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clone_params
-      params.require(:clone).permit(:content)
+      params.require(:clone).permit(:content, :image, :image_cache)
     end
     
     def login_check
