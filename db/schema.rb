@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180625140419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "clone_id"
-    t.text "image"
+    t.text "icon"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

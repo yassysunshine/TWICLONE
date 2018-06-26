@@ -5,9 +5,8 @@ class User < ApplicationRecord
                     uniqueness: true
   before_validation { email.downcase! }
   has_secure_password
-  validates :image, uniqueness: true 
   validates :password, presence: true, length: { minimum: 6 }
   has_many :clones, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  mount_uploader :image, ImageUploader
+  mount_uploader :icon, IconUploader
 end
