@@ -30,7 +30,7 @@
           <% @clones.each do |clone| %>
             <tr>
               <td><%= clone.content %></td>
-              <td><%= clone.image %></td>
+              <td><%= image_tag clone.image %></td>
               <% if logged_in? %>
               <td><%= link_to '  詳細　', clone_path(clone) %></td>
               <td><%= link_to '　編集　', edit_clone_path(clone) %></td>

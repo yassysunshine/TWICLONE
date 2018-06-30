@@ -30,6 +30,7 @@ class ClonesController < ApplicationController
     @clone.user_id = current_user.id
     respond_to do |format|
       if @clone.save
+        ContactMailer.contact_mail(@clone).deliver
         format.html { redirect_to @clone, notice: 'Clone was successfully created.' }
         format.json { render :show, status: :created, location: @clone }
       else

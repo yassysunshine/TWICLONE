@@ -1,7 +1,7 @@
 class ContactMailer < ApplicationMailer
-  def contact_mail(contact)
-    @contact = contact
+  def contact_mail(clone)
+    @clone = clone
     
-    mail to: "8yashima@gmail.com", subject: "お問合せ確認メール"
+    mail to: @clone.user.email, subject: "お問合せ確認メール"
   end
 end
