@@ -14,7 +14,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @favorites_clones = current_user.favorites
+    @favorites_clones = @user.favorite_clones
+    # @favorites_clones = current_user.favorite_clones
   end
 
   private
